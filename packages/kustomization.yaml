@@ -7,6 +7,6 @@ namespace: argocd
 # Ordered list of application manifests to install
 #
 resources:
-  - podinfo-demo.yaml
+  - manifests/podinfo-demo.yaml
   # - gloo-petclinic.yaml
   # - gloo-petstore.yaml
