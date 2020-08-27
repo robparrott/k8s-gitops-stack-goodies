@@ -14,7 +14,7 @@ spec:
     directory:
       recurse: true
     repoURL: https://github.com/solo-io/gloo.git
-    targetRevision: 4.0.6
+    targetRevision: HEAD
     path: example/petclinic
   destination:
     server: https://kubernetes.default.svc
