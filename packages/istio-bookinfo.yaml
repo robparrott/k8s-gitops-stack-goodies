@@ -18,7 +18,7 @@ spec:
     path: samples/bookinfo/platform/kube
   destination:
     server: https://kubernetes.default.svc
-    namespace: argocd
+    namespace: default
     
   # Sync policy
   syncPolicy:
