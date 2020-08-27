@@ -1,0 +1,28 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: istio-bookinfo-demo
+  namespace: argocd
+
+  # finalizers:  # Add a this finalizer ONLY if you want these to cascade delete.
+  #   - resources-finalizer.argocd.argoproj.io 
+
+spec:
+  project: default
+  source:
+    directory:
+      recurse: true
+    repoURL: https://github.com/istio/istio.git
+    targetRevision: HEAD
+    path: samples/bookinfo/platform/kube
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
+    
+  # Sync policy
+  syncPolicy:
+    automated:
+      prune: false # Specifies if resources should be pruned during auto-syncing ( false by default ).
+      selfHeal: false # Specifies if partial app sync should be executed when resources are changed only in target Kubernetes cluster and no git change detected ( false by default ).
+
