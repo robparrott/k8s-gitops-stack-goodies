@@ -6,8 +6,8 @@ metadata:
   namespace: argocd
 
   # https://argoproj.github.io/argo-cd/user-guide/compare-options/
-  annotations:
-    argocd.argoproj.io/compare-options: IgnoreExtraneous
+  # annotations:
+  #   argocd.argoproj.io/compare-options: IgnoreExtraneous
 
   # finalizers:  # Add a this finalizer ONLY if you want these to cascade delete.
   #   - resources-finalizer.argocd.argoproj.io 
