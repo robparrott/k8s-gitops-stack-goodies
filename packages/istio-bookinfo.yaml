@@ -17,9 +17,9 @@ spec:
   source:
     directory:
       recurse: true
-    repoURL: https://github.com/istio/istio.git
+    repoURL: https://github.com/robparrott/k8s-gitops-stack-goodies.git
     targetRevision: HEAD
-    path: samples/bookinfo/platform/kube/bookinfo.yaml
+    path: implementation/bookinfo
   destination:
     server: https://kubernetes.default.svc
     namespace: default
