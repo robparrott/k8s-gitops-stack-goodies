@@ -19,7 +19,7 @@ spec:
       recurse: true
     repoURL: https://github.com/istio/istio.git
     targetRevision: HEAD
-    path: samples/bookinfo/platform/kube
+    path: samples/bookinfo/platform/kube/bookinfo.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: default
