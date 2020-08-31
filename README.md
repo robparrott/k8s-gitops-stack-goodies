@@ -17,3 +17,35 @@ Components:
 * *petclinic* from Solo.io for the Gloo project
 * *petstore* from Solo.io for the Gloo project
 
+# Access
+
+## Podinfo
+
+
+Port-forward:
+
+```
+kubectl port-forward service/podinfo -n default 9898:9898
+```
+
+Then access:
+
+* http://localhost:9898
+
+See: https://github.com/stefanprodan/podinfo for more information.
+
+## Bookinfo
+
+Ssee the documentation here: https://istio.io/latest/docs/examples/bookinfo/ for more information.
+
+Port-forward:
+
+```
+kubectl port-forward service/productpage -n default 9080:9080
+```
+
+Then access:
+
+* http://localhost:9080/productpage
+
+## Petclinic
