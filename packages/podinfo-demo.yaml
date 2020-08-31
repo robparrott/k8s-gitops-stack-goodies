@@ -12,17 +12,25 @@ metadata:
   # finalizers:  # Add a this finalizer ONLY if you want these to cascade delete.
   #   - resources-finalizer.argocd.argoproj.io 
 
+
+
 spec:
   project: default
-  source:
-    directory:
-      recurse: true
-    repoURL: https://github.com/stefanprodan/podinfo.git
-    targetRevision: 4.0.6
-    path: charts/podinfo
   destination:
     server: https://kubernetes.default.svc
     namespace: default
+    
+  source:
+
+    repoURL: 'https://stefanprodan.github.io/podinfo'
+    targetRevision: 4.0.6
+    chart: podinfo
+
+    # repoURL: 'https://github.com/stefanprodan/podinfo.git'
+    # targetRevision: 4.0.6
+    # path: charts/podinfo
+
+
     
   # Sync policy
   syncPolicy:
