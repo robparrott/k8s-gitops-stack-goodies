@@ -19,19 +19,17 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: default
-    
+
   source:
 
     repoURL: 'https://stefanprodan.github.io/podinfo'
     targetRevision: 4.0.6
     chart: podinfo
 
-    # repoURL: 'https://github.com/stefanprodan/podinfo.git'
-    # targetRevision: 4.0.6
-    # path: charts/podinfo
+    helm:
+      # Release name override (defaults to application name)
+      releaseName: podinfo
 
-
-    
   # Sync policy
   syncPolicy:
     automated:
