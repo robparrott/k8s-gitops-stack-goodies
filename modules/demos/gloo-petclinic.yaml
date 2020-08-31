@@ -2,24 +2,24 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: app-goodies-demo-istio-bookinfo
+  name: app-goodies-demo-gloo-petclinic
   namespace: argocd
 
   # https://argoproj.github.io/argo-cd/user-guide/compare-options/
   annotations:
     argocd.argoproj.io/compare-options: IgnoreExtraneous
 
-  finalizers:  # Add a this finalizer ONLY if you want these to cascade delete.
-    - resources-finalizer.argocd.argoproj.io 
+  # finalizers:  # Add a this finalizer ONLY if you want these to cascade delete.
+  #   - resources-finalizer.argocd.argoproj.io 
 
 spec:
   project: default
   source:
     directory:
       recurse: true
-    repoURL: https://github.com/robparrott/k8s-gitops-stack-goodies.git
+    repoURL: https://github.com/solo-io/gloo.git
     targetRevision: HEAD
-    path: implementation/bookinfo
+    path: example/petclinic
   destination:
     server: https://kubernetes.default.svc
     namespace: default
