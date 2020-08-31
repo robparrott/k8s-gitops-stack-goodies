@@ -49,3 +49,29 @@ Then access:
 * http://localhost:9080/productpage
 
 ## Petclinic
+
+See the documentation: https://docs.solo.io/gloo/latest/guides/security/auth/extauth/oauth/google/
+
+```
+kubectl port-forward service/petclinic -n default 8080:8080
+```
+
+Access:
+
+* http://localhost:8080/
+
+
+## Petstore
+
+See https://docs.solo.io/gloo/latest/guides/traffic_management/hello_world/ for more details. This is primarily a REST example without a UI.
+
+Port-forward:
+
+```
+kubectl port-forward service/productpage -n default 8080:8080
+```
+
+Then access (will only work after the demo is setup):
+
+* http://localhost:8080/swagger.json
+
